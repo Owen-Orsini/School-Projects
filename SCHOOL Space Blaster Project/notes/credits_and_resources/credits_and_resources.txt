@@ -1,0 +1,8 @@
+https://csanyk.com/2018/08/gamemaker-tutorial-delta-time/
+
+https://web.cs.wpi.edu/~rich/courses/imgd4000-d09/lectures/D-Physics.pdf
+
+https://www.toptal.com/game/video-game-physics-part-i-an-introduction-to-rigid-body-dynamics
+
+https://gmcore.io/
+
