@@ -1,0 +1,218 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package bankaccount;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+/**
+ *
+ * @author s.oaorsini
+ */
+public class BankAccount{
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        String acc1[] = {"userdude", "passcodey"}; //declares username/pass for account 1 in an array
+        String acc2[] = {"usergal", "wordpass"};   //declares username/pass for account 2 in an array
+        
+        Scanner loginscan = new Scanner(System.in);
+        int whichacc = 3;    
+        int var1 = 1;
+        int var2 = 1;
+        int var3 = 1;
+        
+        
+        ArrayList<Integer> acc1money = new ArrayList<>();
+        ArrayList<Integer> acc2money = new ArrayList<>();
+        acc1money.add(100);
+        acc2money.add(75);
+        while(var2 == 1)
+        {
+            var1 = 1;
+            while(var1 == 1)
+            {
+                System.out.println("Please enter your username:");
+                String userattempt = loginscan.nextLine();
+                int acc1comp = acc1[0].compareTo(userattempt);
+                int acc2comp = acc2[0].compareTo(userattempt);
+
+                if(acc1comp != 0 && acc2comp != 0)
+                {
+                    System.out.println("No accounts match username, please try again.");
+                }
+                if(acc1comp == 0 || acc2comp == 0)
+                {
+                    System.out.println("Please enter your password:");
+                    String passattempt = loginscan.nextLine();
+
+                    int acc1passcomp = acc1[1].compareTo(passattempt);
+                    int acc2passcomp = acc2[1].compareTo(passattempt);
+
+                    if(acc1comp == 0 && acc1passcomp == 0)
+                    {
+                        System.out.println("acc1 entered, welcome");
+                            whichacc = 1;
+                            var1 = 0;
+                    }
+                    if(acc2comp == 0 && acc2passcomp == 0)
+                    {
+                        System.out.println("acc2 entered, welcome");
+                            whichacc = 2;
+                            var1 = 0;   
+                    }
+                }
+            }
+            System.out.println("");
+            System.out.println("Please select an action by");
+            System.out.println("entering it's corresponding");
+            System.out.println("letter in lowercase.");
+            var3 = 1;
+            while(var3 == 1)
+            {
+                System.out.println("(a) view balance");
+                System.out.println("(b) deposit");
+                System.out.println("(c) withdraw");
+                System.out.println("(d) ledger");
+                System.out.println("(e) logout");
+                String acctmgmt = loginscan.nextLine();
+                if(acctmgmt.compareTo("a") == 0)
+                {
+                    System.out.println("Balance:");
+                    if(whichacc == 1)
+                    {
+                        System.out.println("$" + acc1money.get(acc1money.size() - 1));
+                    }
+                    if(whichacc == 2)
+                    {
+                        System.out.println("$" + acc2money.get(acc2money.size() - 1));
+                    }
+                }
+                if(acctmgmt.compareTo("b") == 0)
+                {
+                    System.out.println("How much would you like to deposit?:");
+                    if(whichacc == 1)
+                    {
+                        int acc1add = loginscan.nextInt();
+                        acc1money.add(acc1add + acc1money.get(acc1money.size() - 1));
+                    }
+                    if(whichacc == 2)
+                    {
+                        int acc2add = loginscan.nextInt();
+                        acc2money.add(acc2add + acc2money.get(acc2money.size() - 1));
+                    }
+                }
+                if(acctmgmt.compareTo("c") == 0)
+                {
+                    System.out.println("How much would you like to withdraw?:");
+                }
+                if(acctmgmt.compareTo("d") == 0)
+                {
+                    System.out.println("Ledger:");
+                }
+                if(acctmgmt.compareTo("e") == 0)
+                {
+                    System.out.println("Goodbye:");
+                    var3 = 0;
+                }
+
+            }
+        }
+        
+        
+        
+               
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+//       int condition1 = 1; 
+//       while(condition1 == 1)
+//       {
+//           System.out.println("Login(a) or create new account(b)?");
+//           String logornew = loginscan.nextLine();
+//           int login = logornew.compareTo("a");
+//           int newaccount = logornew.compareTo("b");
+//           if(login == 0)
+//           {
+//               System.out.println("Please enter your username:");
+//               
+//           }
+//           if(newaccount == 0)
+//           {
+//               System.out.println("Please enter your new username:");
+//               String newname = loginscan.nextLine();
+//               
+//           } 
+//           if(login != 0 && newaccount != 0)
+//           {
+//               System.out.println("Invalid response");
+//               System.out.println("enter either \"a\" or \"b\".");
+//           }
+//       
+//       }
+        
+        
+//        Scanner scan = new Scanner(System.in);
+//        int i = 1;
+//        while(i == 1)
+//        {
+//            System.out.println("enter username pls b0ss: ");
+//            String userattempt = scan.nextLine();
+//            int var1 = username.compareTo(userattempt);
+//                if(var1 == 0)
+//                {
+//                    System.out.println("Correct username");
+//                    int f = 1;
+//                    while(f == 1)
+//                    {
+//                        System.out.println("Enter Password: ");
+//                        String passattempt = scan.nextLine();
+//                        int var2 = password.compareTo(passattempt);
+//                        if(var2 == 0)
+//                        {
+//                            System.out.println("Correct Password");
+//                            f = 0;
+//                            i = 0;
+//                        }else
+//                        {
+//                            System.out.println("Incorrect password, please try again");
+//                        }
+//                    }        
+//                    
+//                }else
+//                {
+//                    System.out.println("Incorrect username, please try again");
+//                }
+//        }
+//        System.out.println("");
+//        System.out.println("Welcome");
+    }
+    
+}
